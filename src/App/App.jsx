@@ -5,9 +5,9 @@ import { IconError, IconWarning, IconSuccess  } from '../components/icons';
 export const App = () => {
     return (
         <div className={styles.container}>
-            <Notification color="var(--warning-color)" Icon={IconWarning} label="Notification" className={styles.notifBtn} />
-            <Notification color="var(--success-color)" Icon={IconSuccess} label="Notification" className={styles.notifBtn} />
-            <Notification color="var(--error-color)" Icon={IconError} label="Notification" className={styles.notifBtn} />
+         <Notification type="warning" className={styles.notifBtn}>Notification</Notifications>
+        <Notification type="success" className={styles.notifBtn}>Notification</Notifications>
+        <Notification type="error" className={styles.notifBtn}>Notification</Notifications>
         </div>
     )
 }
