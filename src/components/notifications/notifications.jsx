@@ -13,7 +13,7 @@ export const Notification = ({ className, Icon, label, color }) => {
     return (
         <button className={clsx(styles.button, styles[type], className)}>
             <Icon className={styles.icon}></Icon>
-            <span className={styles.label}>{label}</span>
+            <span className={styles.label}>{children}</span>
         </button>
     );
 };
