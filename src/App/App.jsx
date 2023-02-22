@@ -1,6 +1,5 @@
 import styles from './App.module.css';
 import { Notification } from '../components/notifications';
-import { IconError, IconWarning, IconSuccess  } from '../components/icons';
 
 export const App = () => {
     return (
