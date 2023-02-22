@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { IconError, IconWarning, IconSuccess  } from '../icons';
 import styles from './notifications.module.css';
 
 export const Notification = ({ className, Icon, label, color }) => {
