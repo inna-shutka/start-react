@@ -11,8 +11,16 @@ const icons = {
 
 export const Notification = ({ className, children, type}) => {
     const Icon = icons[type];
+
+    const onClick = () => {
+        alert('Attantion!');
+    };
+
     return (
-        <button className={clsx(styles.button, styles[type], className)}>
+        <button 
+            onClick={onClick}
+            className={clsx(styles.button, styles[type], className)}
+        >
             <Icon className={styles.icon}></Icon>
             <span className={styles.label}>{children}</span>
         </button>
