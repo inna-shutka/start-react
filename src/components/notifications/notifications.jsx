@@ -1,18 +1,26 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import {IconWarning, IconSuccess, IconError} from '../icons';
 import styles from './notifications.module.css';
 
-export const Notification = ({ className, Icon, label, color }) => {
+const icons = {
+    warning: IconWarning,
+    success: IconSuccess,
+    error: IconError
+};
+
+export const Notification = ({ className, children, type}) => {
+    const Icon = icons[type];
     return (
-        <button style={{ backgroundColor: color }} className={clsx(styles.button, className)}>
+        <button className={clsx(styles.button, styles[type], className)}>
             <Icon className={styles.icon}></Icon>
-            <span className={styles.label}>{label}</span>
+            <span className={styles.label}>{children}</span>
         </button>
     );
 };
 
 Notification.propTypes = {
-    label: PropTypes.string.isRequired,
-    Icon: PropTypes.string.isRequired,
-    className: PropTypes.string,
+    type: PropTypes.oneOf(['warning', 'success', 'error']).isRequired,
+    children: PropTypes.string.isRequired,
+    className: PropTypes.string
 };
