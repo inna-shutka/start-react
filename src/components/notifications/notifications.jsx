@@ -9,13 +9,9 @@ const icons = {
     error: IconError
 };
 
-export const Notification = ({ className, children, type}) => {
+export const Notification = ({ className, children, type, onClick}) => {
     const Icon = icons[type];
-
-    const onClick = () => {
-        alert('Attantion!');
-    };
-
+    
     return (
         <button 
             onClick={onClick}
@@ -30,5 +26,6 @@ export const Notification = ({ className, children, type}) => {
 Notification.propTypes = {
     type: PropTypes.oneOf(['warning', 'success', 'error']).isRequired,
     children: PropTypes.string.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onClick: PropTypes.func.isRequired,
 };
